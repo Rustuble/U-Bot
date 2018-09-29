@@ -1,1 +1,1 @@
-worker: node bot Pyth
+worker: node Bot Pyth
