@@ -1,5 +1,5 @@
 {
-  "name: "Test",
+  "name": "Test",
   "desciption": "Test",
   "version": "0.0.0",
   "main": "Bot Pyth",
@@ -7,6 +7,6 @@
     "start": "Bot Pyth"
   },
   "dependencies": {
-    "discord pyth": "3.6.5",
+    "discord.js": "11.1.0",
   }   
 }  
