@@ -1,0 +1,122 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
+import time
+import random
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+Client = discord.Client()
+client = commands.Bot(command_prefix = "|")
+killResponses = ["<@%s> Died 4 no reason","<@%s> : I don't feel so good","<@%s> Explode's"]
+
+@client.event
+async def on_ready():
+    print("Boi Im READY!!!")
+
+@client.event
+async def on_member_join(member):
+    role = discord.utils.get(member.server.roles, name='Dudes')
+    await client.add.roles(member, role)
+
+@client.event
+async def on_message(message):
+    if message.content.startswith('|yo'):
+        userID = message.author.id
+        stupidbot = random.choice(["Wazzap! <@%s>","Have some Memes <@%s>","Yo <@%s>","Kamusta <@%s>","I pinged <@%s>" % (userID)])
+        await client.send_message(message.channel, "Wazzap! <@%s>" % (userID))
+
+    elif message.content.startswith('|shouldikillu'):
+        shouldikillu = random.choice(["Try me Dummy","dat's pointless","U will lose anyway's","No","Nope.avi,Dont even try U"])
+        await client.send_message(message.channel, shouldikillu)        
+
+    elif message.content.startswith('|animation'):
+        animation = random.choice(["Animation's **HARD!** U need to get used to it BTW","don't use mouse cause it's hard to use it you know","Good luck using flash in low resolution.U need some space","If ur flash crashes then well just crush it ~~not a pun........idk~~","use tween's USE TWEEN'S **USE TWEEN'S**..............with ease"])
+        await client.send_message(message.channel, animation)
+
+    elif message.content.startswith('|Rustuble'):
+        Rustuble = random.choice(["Ooh Rustuble? He's busy practicing his power's","Rustuble? just a Cool Bot that does unnecessary stuff","Sometimes he need's to stop being stupid for no reason"])    
+        await client.send_message(message.channel, Rustuble)
+
+    elif message.content.startswith('|ubot'):
+        ubot = random.choice(["U stand 4 Ultimate!","I look like a probe from Starcraft","Where do I even come from?","I'm still learning stuff","........Hi.","Wat is it?"])
+        await client.send_message(message.channel, ubot)
+
+    elif message.content.startswith('|stupidbot'):
+        userID = message.author.id
+        stupidbot = random.choice(["I Don't Care U **Plsatic**","Seriously","Ay nako talaga","Ping U","Stupid User. Calling me dat for no reason",">:(","I hope U stop saying that" % (userID)])
+        await client.send_message(message.channel, stupidbot)  
+
+    elif message.content.startswith('|killurself'):
+        userID = message.author.id
+        await client.send_message(message.channel, "Nope.avi <@%s>" % (userID))
+        await client.send_message(message.channel, "killurself <@%s>" % (userID))
+        await client.send_message(message.channel, "U <@%s>" % (userID))
+
+    elif message.content.startswith('|randomdudes'):
+        randomdudes = random.choice(["Rustuble: Just me and him doing stuff's. Also busy doing animation while always get's distracted","Jzboy: An awesome dude just wanna Animate and has good Animation like Terraria Series. Just don't rush him. And that goes for others too U know","Alan becker: Man he has gud Idea's for Animation u know like Animation v.s Minecraft","Walkingmelonsaaa: The gud Artist I know","Ladyuniquecorn: Ooh Ladyuniquecorn? She's one cool Artist also Rustuble's Sister","Fr00sk: Gud Artist also pls enough with the sandstale plz","Slamacow: Has very gud minecraft Animation. I hope he make's more","HowToBasic: Has good Tutorials about Destroying and Wasting Eggs..........Cool :egg::egg::egg::egg::egg::egg::egg::egg::egg::egg:","8-BitRyan: Keep Calm and Watch More Gameplay's :video_game: ","DanTDM: More Random Game's to Play and a gud Youtuber","F-777: Has **Very** Awesome soundtrack's 4 Game's and stuff's","Gametheory: Hello Internet welcome to Gametheory","PootStablook: Wah Not Sr.Pelo's son","Sr.Pelo: (slaps Table) **AAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!**","RopTop: RUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUBRUB","Pewdepie: Need More Meme Review's. Most Subsciber's of them all","Meatly: Just a Puppet. Creator of Bendy","TheLivingTombstone: I Need More Soundtrack's from Him!","Stampylonghead: He's still building his Lovely World. I wish he could finish it all","Scott Cawthon: He..hellooouu he.HELLLLOOOO hello?!","TobyFox: More Undertale when?","PuffballsUnited: I'm sure he's almost done making his remastered and new good game"])                                                                                
+        await client.send_message(message.channel, randomdudes)  
+
+    elif message.content.startswith('|randomdiscorddudes'):
+        randomdiscorddudes = random.choice(["Eggcellent: Really love's Egg's while HowToBasic's Destroy's Egg's :egg::egg::egg::egg::egg::egg::egg::egg::egg::egg:","FudgesicklesTube: Wat does he really want's Fudgesickles or Cola?","Metacube: Does random animation's for reason","Dragonite: Just a Dragon Animator Memer","IvanJames: Playing with Discord Obviously","Demonic Retribution: Expose's dude's 4 reason","IceLemon/Forever Maggot: Chirp~~","StrykerX: Press Start but the Skull is Retarded"])
+        await client.send_message(message.channel, randomdiscorddudes)   
+
+    elif message.content.startswith('|ping me'):
+        userID = message.author.id
+        await client.send_message(message.channel, ".........Yeeeaaahhh!")        
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+        await client.send_message(message.channel, "<@%s>" % (userID))
+
+    elif message.content.startswith('|botbotbotbotbotbotbotbotbotbot'):
+        await client.send_message(message.channel, 'Ok if you type **Bot** Again 4 times and ill ping everyone u.')
+        for i in range(4):
+            msg = await client.wait_for_message(author=message.author, content='Bot')
+            fmt = '**{}!**'
+            await client.send_message(message.channel, fmt.format(3 - i))
+
+        await client.send_message(message.channel, '@everyone! ok bye! (runs away)')
+
+    elif message.content.startswith('|yourcool'):
+        await client.send_message(message.channel, 'Cool. Say im cool')
+        msg = await client.wait_for_message(author=message.author, content='im cool')
+        await client.send_message(message.channel, 'Now your cool.')
+        await client.send_message(message.channel, ':sunglasses:')
+
+    elif message.content.startswith('|Awesome'):
+        await client.send_message(message.channel, "Ooh Who's awesome?")
+        def check(msg):
+            return msg.content.startswith('')
+        message = await client.wait_for_message(author=message.author, check=check)
+        name = message.content[len(''):].strip()
+        await client.send_message(message.channel, "Ooh {}? He's/She's awesome Indeed".format(name))        
+        await client.send_message(message.channel, ':sunglasses:')
+
+    elif message.content.startswith('|talku'):
+        await client.send_message(message.channel, 'A random voice appear in your computer lolololololololololololololololol', tts=True)
+    
+
+    elif message.content.startswith('|Daisy'):
+        await client.send_message(message.channel, "Ooh who's Daisy? from Gumball?")
+
+    elif message.content.startswith('|Ladyuniquecorn'):
+        await client.send_message(message.channel, "ooh her? go check her out, she's good at something tho..................u know like drawing stuffs")
+
+
+
+
+
+    elif message.content.startswith('|help'):
+        em = discord.Embed(title="Useless Commands (use dis first '|' )", description="yo, shouldikillu, animation, stupidbot, Rustuble, ubot, killurself, stupidbot, randomdudes, randomdiscorddudes, ping me, botbotbotbotbotbotbotbotbotbot, yourcool, cool, talku, help.", colour=0x00e0ff)
+        await client.send_message(message.channel, embed=em)
+        
+client.run("NDQ1ODE3NzE4OTk4OTU4MDgw.Ddwf9A.0EFQWrMj5J8cnCezvuuVtaZgb2A")
